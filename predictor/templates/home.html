@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +57,6 @@
         .card-body{
             background:white;
             border-radius:25px 25px 0 0;
-            padding:35px !important;
         }
 
         .form-label{
@@ -103,65 +103,57 @@
             border-radius:18px;
         }
 
-        .alert-info{
-            border:none;
-            border-radius:15px;
-        }
-
     </style>
 </head>
 
 <body>
 
-    <div class="container mt-5 mb-5" style="max-width: 1000px;">
+<div class="container mt-5 mb-5" style="max-width: 900px;">
+    <div class="card">
 
-        <div class="card">
+        <div class="header">
 
-            <div class="header">
+            <h2>
+                <i class="fa-solid fa-chart-line"></i>
+                Customer Churn Prediction
+            </h2>
 
-                <h2>
-                    <i class="fa-solid fa-chart-line"></i>
-                    Customer Churn Prediction
-                </h2>
+            <p>
+                AI-Powered Customer Retention Analytics
+            </p>
 
-                <p>
-                    AI-Powered Customer Retention Analytics
-                </p>
+        </div>
 
-            </div>
-        
+        <div class="card-body p-4">
+            <div class="alert alert-primary text-center mb-4">
+    		<i class="fa-solid fa-lightbulb"></i>
+   		 Fill all customer details accurately to get the most reliable churn prediction.
+	    </div>
 
-       <div class="card-body p-4">
+            <form method="POST">
 
-            <div class="alert alert-info text-center mb-4 shadow-sm">
-                <i class="fa-solid fa-lightbulb"></i>
-                Fill all the details accurately to get the most reliable churn prediction.
-            </div>
+                {% csrf_token %}
 
-        <form method="POST">
+                <div class="row">
 
-            {% csrf_token %}
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Gender</label>
 
-        <div class="row">
+                        <select class="form-select"
+                                name="gender"
+                                required>
 
-            <div class="col-md-6 mb-3">
-                <label class="form-label">Gender</label>
+                            <option value=""
+                                    selected
+                                    disabled>
+                                -- Select Gender --
+                            </option>
 
-                <select class="form-select"
-                        name="gender"
-                        required>
+                            <option>Male</option>
+                            <option>Female</option>
 
-                    <option value=""
-                            selected
-                            disabled>
-                        -- Select Gender --
-                    </option>
-
-                    <option>Male</option>
-                    <option>Female</option>
-
-                </select>
-            </div>
+                        </select>
+                    </div>
 
                     <div class="col-md-6 mb-3">
                         <label class="form-label">
@@ -312,6 +304,7 @@
 
                         </select>
                     </div>
+		   
                     <div class="col-md-6 mb-3">
                         <label class="form-label">
                             Online Backup
@@ -525,7 +518,7 @@
 
                 <div class="text-center mt-4">
 
-                    <button type="submit" class="btn btn-primary btn-lg">
+                    <button class="btn btn-primary btn-lg">
 
                         <i class="fa-solid fa-brain"></i>
 
@@ -552,27 +545,15 @@
 
                     <hr>
 
-                    <label class="fw-bold">
-                        Stay Probability
-                    </label>
+                    <h5>
+                        Stay Probability:
+                        {{ stay_prob }}%
+                    </h5>
 
-                    <div class="progress mb-3">
-                        <div class="progress-bar bg-success"
-                            style="width: {{ stay_prob }}%">
-                            {{ stay_prob }}%
-                        </div>
-                    </div>
-
-                    <label class="fw-bold">
-                        Churn Probability
-                    </label>
-
-                    <div class="progress">
-                        <div class="progress-bar bg-danger"
-                            style="width: {{ churn_prob }}%">
-                            {{ churn_prob }}%
-                        </div>
-                    </div>
+                    <h5>
+                        Churn Probability:
+                        {{ churn_prob }}%
+                    </h5>
 
                 </div>
 
@@ -610,7 +591,8 @@
     </div>
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
+
 
