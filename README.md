@@ -19,3 +19,17 @@ Customer Churn Prediction is a Machine Learning web application that predicts wh
 3. A trained Random Forest Machine Learning model analyzes the customer information.
 4. The model predicts whether the customer is likely to **Stay** or **Churn**.
 5. The prediction result is displayed instantly on the web application.
+
+## 📸 Screenshots
+
+### Initial Form
+
+![Initial Form](ScreenShots_CCP/Initial_Form.jpeg)
+
+### Form After Filling Details
+
+![Filled Form](ScreenShots_CCP/Form_after_Filling.jpeg)
+
+### Prediction Result
+
+![Result](ScreenShots_CCP/Result.jpeg)
