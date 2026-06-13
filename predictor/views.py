@@ -53,12 +53,12 @@ def home(request):
 
         stay_prob = min(
             round(probabilities[0] * 100, 2),
-            99.9
+            95
         )
 
         churn_prob = min(
             round(probabilities[1] * 100, 2),
-            99.9
+            95
         )
 
         # Result text
